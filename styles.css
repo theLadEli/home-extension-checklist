@@ -155,6 +155,10 @@ a {
         line-height: 34px;
     }
 
+    body {
+        height: 90vh;
+    }
+
     /* Welcome Page */
 
     #welcome-content {
