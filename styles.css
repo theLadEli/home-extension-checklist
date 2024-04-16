@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --primary: #57b3bd;
+    --secondary: #ff694e;
+    --background: #f2f2f5;
+    --button: #3399fd;
+    --text: #272f3a;
+    --inactive: #a4a9b4;
+    --stroke: #E6E9F0;
+}
+
+@font-face {
+    font-family: Aeonik;
+    src: url(assets/fonts/Aeonik-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Aeonik;
+    src: url(assets/fonts/Aeonik-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Aeonik;
+    src: url(assets/fonts/Aeonik-Light.ttf);
+    font-weight: 200;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+
+h1 {
+    color: var(--text);
+    text-align: center;
+    font-family: Aeonik;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.3px;
+}
+
+p {
+    color: var(--Text, #272F3A);
+    text-align: center;
+    font-family: "Nunito Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.18px;
+}
+
+body {
+    background: var(--background);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+/* Welcome Page */
+
+#welcome-content {
+    max-width: 900px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
