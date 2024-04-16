@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 :root {
     --primary: #57b3bd;
@@ -64,7 +65,28 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
+}
+
+a {
+    /* Style */
+    border-radius: 12px;
+    background-color: var(--button);
+    box-shadow: 0px 8px 16px 0px rgba(51, 153, 253, 0.32);
+
+    /* Layout */
+    width: fit-content;
+    padding: 18px 50px;
+
+    /* Typography */
+    color: #fff;
+    font-family: Aeonik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    text-decoration: none;
+    letter-spacing: 0.18px;
 }
 
 /* Welcome Page */
@@ -75,4 +97,71 @@ body {
     display: flex;
     flex-direction: column;
     gap: 50px;
+}
+
+#wc_text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#wc_text h1 {
+    text-wrap: balance;
+}
+
+#wc_text-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+#wc_ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#wc_ctas_keypress-indicator {
+    color: #000;
+    text-align: center;
+    font-family: "Nunito Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.14px;
+    display: flex;
+    align-items: center;
+}
+
+#wc_ctas_keypress-indicator img {
+    margin-left: 10px;
+    margin-right: 6px;
+}
+
+
+/* --------------------- */
+/*  Mobile Optimisation  */
+/* --------------------- */
+
+@media only screen and (max-width: 600px) {
+
+    /* Global Styles */
+
+    h1 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    /* Welcome Page */
+
+    #welcome-content {
+        padding: 10px 30px;
+    }
+    
+    #wc_ctas_keypress-indicator {
+        display: none;
+    }
+
 }
