@@ -19,25 +19,17 @@
 
 <body>
 
-    <section id="welcome-content">
+    <section id="about-you-content">
 
-        <div id="wc_text">
-            <h1>Planning an Extension? Our Smart Checklist Guides You Step-by-Step ✨</h1>
-            <div id="wc_text-paragraphs">
-                <p>Dreaming of extra space but feeling lost in the world of home extensions? BuildBuddy is here to help!</p>
-                <p>Answer a few quick questions and we'll create a personalized checklist tailored just for your project, no matter the stage or size.</p> 
-                <p><b>There's no catch, just a smoother extension journey!</b></p>
-            </div>
+        <div id="ayc_text">
+            <h1>Lets get started!</h1>
+            <p>First, what should we call you?</p>
         </div>
 
-        <div id="wc_ctas">
-            <a href="about-you.html">Let's Get Started!</a>
-            <div id="wc_ctas_keypress-indicator">
-                or press
-                <img src="assets/enter-icon.svg" alt="icon for keyboard key 'enter'">
-                <b>Enter</b>
-            </div>
-        </div>
+        <form id="ayc_form" onsubmit="startForm(event)">
+            <input type="text" name="name" placeholder="John Doe" required>
+            <input type="submit" value="Next">
+        </form>
 
     </section>
 

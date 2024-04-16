@@ -62,7 +62,7 @@ p {
 body {
     background: var(--background);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -86,6 +86,57 @@ a {
     font-weight: 700;
     line-height: 20px;
     text-decoration: none;
+    letter-spacing: 0.18px;
+}
+
+input[type="text"] {
+    /* Layout */
+    display: flex;
+    padding: 15px;
+    padding-left: 20px;
+    text-align: left;
+    align-items: center;
+    width: -webkit-fill-available;
+    
+    /* Style */
+    border-radius: 12px;
+    border: 1px solid #EAEAEC;
+    background: #FFF;
+
+    /* Typography */
+    color: var(--Inactive, #A4A9B4);
+    font-family: Aeonik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+}
+
+input[type="button"], input[type="submit"] {
+    /* Layout */
+    display: flex;
+    min-width: 158px;
+    padding: 18px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    /* Style */
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    background: var(--button);
+    box-shadow: 0px 0px 8px 0px rgba(51, 153, 253, 0.24);
+
+    /* Typography */
+    color: var(--Text-White, #FFF);
+    text-align: center;
+    font-family: Aeonik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
     letter-spacing: 0.18px;
 }
 
@@ -141,6 +192,44 @@ a {
     margin-right: 6px;
 }
 
+/* About You */
+
+#about-you-content {
+    display: flex;
+    width: 510px;
+    padding: 30px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#ayc_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+#ayc_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    align-self: stretch;
+}
+
+/* Project Details */
+
+#project-details-content {
+    max-width: 665px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+}
 
 /* --------------------- */
 /*  Mobile Optimisation  */
@@ -164,7 +253,7 @@ a {
     #welcome-content {
         padding: 10px 30px;
     }
-    
+
     #wc_ctas_keypress-indicator {
         display: none;
     }
