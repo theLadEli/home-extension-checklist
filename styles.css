@@ -97,6 +97,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    padding: 50px;
 }
 
 #wc_text {
