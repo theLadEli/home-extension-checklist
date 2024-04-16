@@ -23,7 +23,7 @@ This tool is designed to assist users in the early stages of planning home exten
 
 ## Usage
 
-To use the application, simply visit this URL to access the latest version of the web-app, hosted on GitHub Pages: `[URL to be added shortly]`
+To use the application, simply visit this URL to access the latest version of the web-app, hosted on GitHub Pages: [theladeli.github.io/home-extension-checklist](https://theladeli.github.io/home-extension-checklist/)
 
 Start by entering the onboarding flow, answer the questions about your home extension project, and view the dynamically generated and interactive checklist tailored to your needs.
 
