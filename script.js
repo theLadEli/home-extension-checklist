@@ -17,3 +17,18 @@ function startForm(event) {
     localStorage.setItem('userDetails', JSON.stringify(userDetails));
     location.href = "/project-details.html";
 }
+
+function saveProjectDetails(event){
+    // event.preventDefault();
+
+    for (var key in userDetails) {
+        if (userDetails.hasOwnProperty(key)) {
+            userDetails.key = $("input[name='key'").val();
+            console.log(key + ": " + userDetails[key]);
+        }
+    }
+
+    // userDetails.project_type = $("input[name='project-type'").val();
+    // userDetails.project_type = $("input[name='project-type'").val();
+}
+saveProjectDetails()

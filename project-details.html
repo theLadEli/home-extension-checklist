@@ -17,10 +17,11 @@
 
 </head>
 
-<body>
+<body style="height: unset;">
 
-    <section id="project-details-content">
+    <form onsubmit="" id="project-details-content">
 
+        <!-- Q1: Project Type -->
         <div class="step">
 
             <div class="step-text">
@@ -58,6 +59,7 @@
 
         </div>
 
+        <!-- Q2: Planning Status -->
         <div class="step">
 
             <div class="step-text">
@@ -86,6 +88,7 @@
 
         </div>
 
+        <!-- Q3: Design -->
         <div class="step">
 
             <div class="step-text">
@@ -107,6 +110,7 @@
 
         </div>
 
+        <!-- Q4: Interior and Finishes -->
         <div class="step">
 
             <div class="step-text">
@@ -128,6 +132,7 @@
 
         </div>
         
+        <!-- Q5: External Works -->
         <div class="step">
 
             <div class="step-text">
@@ -149,6 +154,7 @@
 
         </div>
         
+        <!-- Q6: Construction and Management -->
         <div class="step">
 
             <div class="step-text">
@@ -161,21 +167,25 @@
             </div>
 
             <fieldset>
-                <input type="radio" name="external-works" id="ew_yes" value="yes">
-                <label for="ew_yes"><b>Yes</b></label>
+                <input type="radio" name="construction-and-management" id="cam_yes" value="yes">
+                <label for="cam_yes"><b>Yes:</b> I’ll be overseeing all aspects of the construction</label><br>
                 
                 
-                <input type="radio" name="external-works" id="ew_no" value="no">
-                <label for="ew_no"><b>No</b></label>
+                <input type="radio" name="construction-and-management" id="cam_no" value="no">
+                <label for="cam_no"><b>No:</b> I’ll hire a project manager who can handle the day-to-day tasks, saving me time and stress.</label><br>
+
+                <input type="radio" name="construction-and-management" id="cam_unsure" value="unsure">
+                <label for="cam_unsure"><b>Unsure:</b> I'll decide this later.</label>
             </fieldset>
 
         </div>
         
+        <!-- Q7: Professional Help -->
         <div class="step">
 
             <div class="step-text">
-                <h1></h1>
-                <p></p>
+                <h1>Which professionals have you hired or do you plan on hiring for your project?</h1>
+                <p>Select all the professionals you plan to hire or have already hired for your extension project. This can be updated later as your project progresses.</p>
             </div>
 
             <div class="progress-bar">
@@ -183,11 +193,76 @@
             </div>
 
             <fieldset>
+                <input type="checkbox" id="architect" name="architect" value="architect">
+                <label for="architect">Architect</label>
+
+                <input type="checkbox" id="structural-engineer" name="structural-engineer" value="structural-engineer">
+                <label for="structural-engineer">Structural Engineer</label>
                 
+                <input type="checkbox" id="Builder" name="Builder" value="Builder">
+                <label for="Builder">Builder</label>
+                
+                <input type="checkbox" id="interior-designer" name="interior-designer" value="interior-designer">
+                <label for="interior-designer">Interior Designer</label>
+                
+                <input type="checkbox" id="none" name="none" value="none">
+                <label for="none">None</label>
             </fieldset>
 
         </div>
-    </section>
+        
+        <!-- Q8: Budget -->
+        <div class="step">
+
+            <div class="step-text">
+                <h1>Have you set a budget for your project?</h1>
+                <p><b>Did you know:</b> less then 1 in 3 projects come within 10% of the original budget.<br><br>Setting a realistic budget upfront can help you avoid financial surprises down the road, and BuildBuddy is here to help you do so!</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="pb_progress"></div>
+            </div>
+
+            <fieldset>
+                <input type="radio" name="budget" id="b_yes-fixed" value="yes-fixed">
+                <label for="b_yes-fixed"><b>Yes:</b> I have a fixed budget</label><br>
+                
+                
+                <input type="radio" name="budget" id="b_yes-flexible" value="yes-flexible">
+                <label for="b_yes-flexible"><b>No:</b> but it’s flexible</label><br>
+
+                <input type="radio" name="budget" id="b_no" value="no">
+                <label for="b_no"><b>Unsure:</b> I need help setting it</label>
+            </fieldset>
+
+        </div>
+
+        <!-- Q9: Timeline -->
+        <div class="step">
+
+            <div class="step-text">
+                <h1>Is there a target date you'd ideally like your extension project to be completed by?</h1>
+                <p>Extension projects can take time and impact your daily routine.  Having a target completion date in mind can help you stay motivated, manage expectations and prioritise tasks.</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="pb_progress"></div>
+            </div>
+
+            <fieldset>
+                <input type="radio" name="timeline" id="t_yes" value="yes">
+                <label for="t_yes"><b>Yes,</b> I have a date in mind</label><br>
+                
+                
+                <input type="radio" name="timeline" id="t_no" value="no">
+                <label for="t_no"><b>No:</b> but it’s flexible</label><br>
+            </fieldset>
+
+        </div>
+        
+        <input type="submit" value="Submit">
+        
+    </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="script.js"></script>
