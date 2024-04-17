@@ -45,6 +45,6 @@ function saveProjectDetails(event){
 }
 
 $("#local_storage_loaded").append(`
-<h1>Hi ${localStorage.getItem("userName")}</h><br>
-<p>${localStorage.getItem("userDetails")}</p>
+    <h1>Hi ${localStorage.getItem("userName")}</h><br>
+    <p>${localStorage.getItem("userDetails")}</p>
 `)
