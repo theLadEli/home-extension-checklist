@@ -1,3 +1,5 @@
+var taskList;
+var userTaskList;
 var userDetails = {
     project_type: "",
     planning_status: "",
@@ -48,3 +50,37 @@ $("#local_storage_loaded").append(`
     <h1>Hi ${localStorage.getItem("userName")}</h><br>
     <p>${localStorage.getItem("userDetails")}</p>
 `)
+
+function convertCSVtoArray() {
+
+    Papa.parse('./task_list.csv', {
+    header: true,
+    download: true,
+    dynamicTyping: true,
+    complete: function(results) {
+        console.log(results);
+        taskList = results.data;
+    }
+    });
+
+}
+
+function getRelevantUserTasks() {
+    // Update userDetails object with values from form using local storage
+    userDetails = JSON.parse(localStorage.getItem("userDetails"))
+
+    // Planning Status
+    switch(userDetails.planning_status) {
+        case "no":
+            
+    }
+}
+
+function pushTaskToArray(task_id) {
+    // Populate the taskList array
+    convertCSVtoArray();
+
+    // Find the relevant object in the array
+    var relevantObject = taskList.find(obj => obj.ID === 22);
+    userTaskList.push(relevantObject)
+}
