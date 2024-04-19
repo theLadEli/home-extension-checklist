@@ -89,16 +89,19 @@ function pushTaskToArray(...task_ids) {
 
 }
 
-pushTaskToArray(22,1,2,34,11,3)
+function getRelevantUserTasks() {
+    // Update userDetails object with values from form using local storage
+    userDetails = JSON.parse(localStorage.getItem("userDetails"))
 
-
-// function getRelevantUserTasks() {
-//     // Update userDetails object with values from form using local storage
-//     userDetails = JSON.parse(localStorage.getItem("userDetails"))
-
-//     // Planning Status
-//     switch(userDetails.planning_status) {
-//         case "no":
-            
-//     }
-// }
+    // Planning Status
+    switch(userDetails.planning_status) {
+        case "no":
+            pushTaskToArray(6)
+            console.log("Pushed 6 for No")
+            break;
+        case "approved":
+            pushTaskToArray(9);
+            console.log("Pushed 9 for Approved")
+            break;
+    }
+}
