@@ -1,5 +1,5 @@
 var taskList;
-var userTaskList;
+var userTaskList = [];
 var userDetails = {
     project_type: "",
     planning_status: "",
@@ -52,35 +52,53 @@ $("#local_storage_loaded").append(`
 `)
 
 function convertCSVtoArray() {
+    return new Promise((resolve, reject) => {
+        Papa.parse('./task_list.csv', {
+            header: true,
+            download: true,
+            dynamicTyping: true,
+            complete: function(results) {
+                console.log("CSV parsed successfully.");
+                taskList = results.data;
+                resolve(); // Resolve the promise once parsing is complete
+            },
+            error: function(error) {
+                reject(error); // Reject the promise if there's an error
+            }
+        });
+    });
+}
 
-    Papa.parse('./task_list.csv', {
-    header: true,
-    download: true,
-    dynamicTyping: true,
-    complete: function(results) {
-        console.log(results);
-        taskList = results.data;
-    }
+function pushTaskToArray(...task_ids) {
+    // Populate the taskList array
+    convertCSVtoArray().then(() => {
+
+        task_ids.forEach(task_id => {
+                // Find the relevant object in the array
+                var relevantObject = taskList.find(obj => obj.ID === task_id);
+                if (relevantObject) {
+                    userTaskList.push(relevantObject);
+                } else {
+                    console.error("Task not found with ID:", task_id);
+                }
+        })
+
+    }).catch(error => {
+        console.error("Error parsing CSV:", error);
     });
 
 }
 
-function getRelevantUserTasks() {
-    // Update userDetails object with values from form using local storage
-    userDetails = JSON.parse(localStorage.getItem("userDetails"))
+pushTaskToArray(22,1,2,34,11,3)
 
-    // Planning Status
-    switch(userDetails.planning_status) {
-        case "no":
+
+// function getRelevantUserTasks() {
+//     // Update userDetails object with values from form using local storage
+//     userDetails = JSON.parse(localStorage.getItem("userDetails"))
+
+//     // Planning Status
+//     switch(userDetails.planning_status) {
+//         case "no":
             
-    }
-}
-
-function pushTaskToArray(task_id) {
-    // Populate the taskList array
-    convertCSVtoArray();
-
-    // Find the relevant object in the array
-    var relevantObject = taskList.find(obj => obj.ID === 22);
-    userTaskList.push(relevantObject)
-}
+//     }
+// }
