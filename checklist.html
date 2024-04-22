@@ -17,10 +17,52 @@
 
 </head>
 
-<body>
+<body id="two-column-dashboard">
+
+    <section id="sidebar">
+
+        <div class="s_logo">
+            <img src="assets/logo.svg" alt="BuildBuddy Logo">
+        </div>
+
+        <div class="s_overview">
+            <h1 id="user-greeting">Hello!</h1>
+            <div id="overview-stats">
+                <div class="os_row">
+                    <p>Tasks Completed:</p>
+                    <p id="os_tasks-completed"></p>
+                </div>
+                <div class="os_row">
+                    <p>Tasks to Do</p>
+                    <p id="os_tasks-to-do"></p>
+                </div>
+                <div class="os_row">
+                    <p>Total Tasks:</p>
+                    <p id="os_total-tasks"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="s_categories">
+            <h1>Categories</h1>
+            <div id="categories-table">
+                
+            </div>
+        </div>
+
+        <div class="s_sign-in">
+            <p>Edit Selection</p>
+            <img src="" alt="">
+        </div>
+
+    </section>
+
+    <section id="main-checklist">
     
-    <div id="local_storage_loaded">
-    </div>
+        <div id="local_storage_loaded">
+        </div>
+
+    </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="./papaparse.min.js"></script>
