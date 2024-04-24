@@ -11,6 +11,7 @@ var userDetails = {
     budget: "",
     timeline: ""
 }
+var activeQuestion = 1;
 
 function startForm(event) {
     event.preventDefault();
@@ -176,11 +177,55 @@ function getRelevantUserTasks() {
 
 }
 
+// Animate index page out and start flow
+function animateAndStartFlow() {
+    $("#welcome-content").animate({
+        height: 'toggle',
+        opacity: 'toggle'
+    }, 'fast');
+
+    setTimeout(() => {
+            window.location.href = "/about-you.html"
+        }, 300
+    )
+}
+
+// Multi page form logic
+function nextQuestion() {
+    $(`#step-${activeQuestion}`).removeClass("active");
+    activeQuestion++;
+    $(`#step-${activeQuestion}`).addClass("active");
+}
+
+function previousQuestion() {
+    $(`#step-${activeQuestion}`).removeClass("active");
+    activeQuestion--;
+    $(`#step-${activeQuestion}`).addClass("active");
+}
+
 // Load relevant tasks
-$(document).ready(function loadChecklistPageContents() {
+$(document).ready(function() {
 
     // Check if the current page path matches the specific page path
-    if (window.location.pathname === "/checklist.html") {
+    if (window.location.pathname === "/") {
+        // Set 'enter' keypress listener to start form
+        $(document).on('keypress', function (e) {
+            if (e.which == 13) {
+
+                animateAndStartFlow();
+
+            }
+        });
+
+    }
+
+    else if (window.location.pathname === "/project-details.html") {
+        // Custom name introduction
+        console.log("Project details page loaded")
+        $("#project-details-custom-name-intro").text(`👋 Hi ${localStorage.getItem("userName")}! What type of project do you have in mind?`)
+    }
+
+    else if (window.location.pathname === "/checklist.html") {
         // Code to execute when the specific page path loads
         getRelevantUserTasks()
         $("#local_storage_loaded").append(`

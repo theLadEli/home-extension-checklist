@@ -17,15 +17,15 @@
 
 </head>
 
-<body id="body-center" style="height: unset;">
+<body id="body-center">
 
     <form onsubmit="saveProjectDetails(event)" id="project-details-content">
 
         <!-- Q1: Project Type -->
-        <div class="step">
+        <div id="step-1" class="step active">
 
             <div class="step-text">
-                <h1>👋 Hi [name]! What type of project do you have in mind?</h1>
+                <h1 id="project-details-custom-name-intro">👋 Hi! What type of project do you have in mind?</h1>
                 <p>Every extension project is unique. Choosing the right type depends on factors like budget, existing property structure and your desired outcome. <b>If you’re unsure what’s right for you, hover over an option to find out more.</b></p>
             </div>
 
@@ -57,10 +57,14 @@
                 <label for="basement">Basement</label>
             </fieldset>
 
+            <div class="form-nav-buttons" style="justify-content: flex-end;">
+                <a onclick="nextQuestion()">Next</a>
+            </div>
+
         </div>
 
         <!-- Q2: Planning Status -->
-        <div class="step">
+        <div id="step-2" class="step">
 
             <div class="step-text">
                 <h1>Have you thought about planning?</h1>
@@ -86,10 +90,15 @@
                 <label for="ps_approved"><b>I have planning,</b> my application has been approved.</label>
             </fieldset>
 
+            <div class="form-nav-buttons">
+                <a class="secondary-btn" onclick="previousQuestion()">Back</a>
+                <a onclick="nextQuestion()">Next</a>
+            </div>
+
         </div>
 
         <!-- Q3: Design -->
-        <div class="step">
+        <div id="step-3" class="step">
 
             <div class="step-text">
                 <h1>Do you have an idea of what your [project type] should look like?</h1>
@@ -108,10 +117,15 @@
                 <label for="pd_yes"><b>Yes</b><br>I know what I want.</label>
             </fieldset>
 
+            <div class="form-nav-buttons">
+                <a class="secondary-btn" onclick="previousQuestion()">Back</a>
+                <a onclick="nextQuestion()">Next</a>
+            </div>
+
         </div>
 
         <!-- Q4: Interior and Finishes -->
-        <div class="step">
+        <div id="step-4" class="step">
 
             <div class="step-text">
                 <h1>Are you planning on selecting the interior design elements and finishes yourself?</h1>
@@ -130,10 +144,15 @@
                 <label for="iaf_yes"><b>Yes</b><br>I’ll make design decisions and select finishes.</label>
             </fieldset>
 
+            <div class="form-nav-buttons">
+                <a class="secondary-btn" onclick="previousQuestion()">Back</a>
+                <a onclick="nextQuestion()">Next</a>
+            </div>
+
         </div>
         
         <!-- Q5: External Works -->
-        <div class="step">
+        <div id="step-5" class="step">
 
             <div class="step-text">
                 <h1>Will your project include any landscaping or work on your outdoor space?</h1>
@@ -152,10 +171,15 @@
                 <label for="ew_no"><b>No</b></label>
             </fieldset>
 
+            <div class="form-nav-buttons">
+                <a class="secondary-btn" onclick="previousQuestion()">Back</a>
+                <a onclick="nextQuestion()">Next</a>
+            </div>
+
         </div>
         
         <!-- Q6: Construction and Management -->
-        <div class="step">
+        <div id="step-6" class="step">
 
             <div class="step-text">
                 <h1>How do you plan on managing your project?</h1>
@@ -178,10 +202,15 @@
                 <label for="cam_unsure"><b>Unsure:</b> I'll decide this later.</label>
             </fieldset>
 
+            <div class="form-nav-buttons">
+                <a class="secondary-btn" onclick="previousQuestion()">Back</a>
+                <a onclick="nextQuestion()">Next</a>
+            </div>
+
         </div>
         
         <!-- Q7: Professional Help -->
-        <div class="step">
+        <div id="step-7" class="step">
 
             <div class="step-text">
                 <h1>Which professionals have you hired or do you plan on hiring for your project?</h1>
@@ -208,11 +237,16 @@
                 <input type="checkbox" id="none" name="professional_help" value="none">
                 <label for="none">None</label>
             </fieldset>
+        
+            <div class="form-nav-buttons">
+                <a class="secondary-btn" onclick="previousQuestion()">Back</a>
+                <a onclick="nextQuestion()">Next</a>
+            </div>
 
         </div>
         
         <!-- Q8: Budget -->
-        <div class="step">
+        <div id="step-8" class="step">
 
             <div class="step-text">
                 <h1>Have you set a budget for your project?</h1>
@@ -233,12 +267,16 @@
 
                 <input type="radio" name="budget" id="b_no" value="no">
                 <label for="b_no"><b>Unsure:</b> I need help setting it</label>
-            </fieldset>
-
+            </fieldset>            
+        
+            <div class="form-nav-buttons">
+                <a class="secondary-btn" onclick="previousQuestion()">Back</a>
+                <a onclick="nextQuestion()">Next</a>
+            </div>
         </div>
 
         <!-- Q9: Timeline -->
-        <div class="step">
+        <div id="step-9" class="step">
 
             <div class="step-text">
                 <h1>Is there a target date you'd ideally like your extension project to be completed by?</h1>
@@ -258,10 +296,13 @@
                 <label for="t_no"><b>No,</b> I would like help managing my timeline</label><br>
             </fieldset>
 
+            <div class="form-nav-buttons">
+                <a class="secondary-btn" onclick="previousQuestion()">Back</a>
+                <input type="submit" value="Submit">
+            </div>
+
         </div>
-        
-        <input type="submit" value="Submit">
-        
+
     </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
