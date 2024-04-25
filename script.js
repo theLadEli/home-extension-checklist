@@ -232,6 +232,38 @@ function previousQuestion() {
     $(`.pb_progress`).width(progress)
 }
 
+// Sidebar Stats
+function sidebarStats() {
+
+    // Count the number of tasks completed
+    var completedTasksCount = userTaskList.reduce((count, task) => {
+        // If the task is completed, increment the count
+        if (task.completed) {
+            return count + 1;
+        } else {
+            return count;
+        }
+    }, 0);
+
+    // Count the number of tasks with completed = false
+    var incompleteTasksCount = userTaskList.reduce((count, task) => {
+        // If the task is incomplete (completed = false), increment the count
+        if (!task.completed) {
+            return count + 1;
+        } else {
+            return count;
+        }
+    }, 0);
+
+
+    // Apply Stats
+    $("#os_total-tasks").text(userTaskList.length)
+    $("#os_tasks-completed").text(completedTasksCount)
+    $("#os_tasks-to-do").text(incompleteTasksCount)
+
+}
+
+
 // Load relevant tasks
 $(document).ready(function () {
 
@@ -335,17 +367,12 @@ $(document).ready(function () {
                 // Save the updated userTaskList to localStorage
                 localStorage.setItem('userTaskList', JSON.stringify(userTaskList));
                 console.log('userTaskList updated:', userTaskList);
+                sidebarStats();
             } else {
                 console.error('Task not found with ID:', taskId);
+                sidebarStats();
             }
         });
-
-
-
-
-
-        // Update Sidebar Overview Stats
-        $("#os_total-tasks").text(userTaskList.length)
 
         // Accordion Functionality
         // Initially hide all accordion content except the one with data-expanded="true"
@@ -371,6 +398,9 @@ $(document).ready(function () {
         $('.custom-checkbox').click(function () {
             $(this).toggleClass('checked');
         });
+
+        // Load sidebar stats
+        sidebarStats()
 
     }
 
