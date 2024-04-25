@@ -299,13 +299,78 @@ $(document).ready(function () {
         // Retrieve userTaskList from localStorage
         userTaskList = JSON.parse(localStorage.getItem("userTaskList"));
 
+
         // Append userTaskList to #local_storage_loaded
         userTaskList.forEach(task => {
-            $(`#local_storage_loaded`).append(`<p>Task: ${task.Name}, Priority: ${task.Description}</p>`);
+            var isCheckedClass = task.completed ? ' checked' : ''; // Add space before 'checked' class if task.completed is true
+
+            $(`#cc_${task.category_id}`).append(`
+                <div class="accordion-item">
+                    <div class="accordion-header" data-expanded="false">
+                        <div class="group">
+                            <div class="custom-checkbox${isCheckedClass}" data-task_id="${task.ID}"></div>
+                            ${task.Name}
+                        </div>
+                        <img src="assets/chevron_down.svg">
+                    </div>
+                    <div class="accordion-content">
+                        ${task.Description}
+                    </div>
+                </div>
+            `);
         });
+
+        // Event listener for checkbox clicks
+        $('.custom-checkbox').click(function () {
+            // Get the task ID from the data-task_id attribute
+            var taskId = $(this).data('task_id');
+            console.log('Task ID:', taskId);
+            // Find the relevant task in userTaskList
+            var relevantTask = userTaskList.find(task => task.ID === taskId);
+            console.log('Relevant Task:', relevantTask);
+            if (relevantTask) {
+                // Update the 'completed' property of the task based on checkbox state
+                relevantTask.completed = !relevantTask.completed; // Toggle the completed state
+                console.log('Updated Task:', relevantTask);
+                // Save the updated userTaskList to localStorage
+                localStorage.setItem('userTaskList', JSON.stringify(userTaskList));
+                console.log('userTaskList updated:', userTaskList);
+            } else {
+                console.error('Task not found with ID:', taskId);
+            }
+        });
+
+
+
+
 
         // Update Sidebar Overview Stats
         $("#os_total-tasks").text(userTaskList.length)
+
+        // Accordion Functionality
+        // Initially hide all accordion content except the one with data-expanded="true"
+        $('.accordion-content').hide();
+        $('.accordion-header[data-expanded="true"]').next('.accordion-content').show();
+
+        // Toggle accordion content when header is clicked
+        $('.accordion-header').click(function () {
+            var $accordionContent = $(this).next('.accordion-content');
+            var $chevronIcon = $(this).find('img');
+
+            $accordionContent.slideToggle();
+
+            // Toggle the data-expanded attribute based on visibility
+            var expanded = $accordionContent.is(':visible') ? 'true' : 'false';
+            $(this).attr('data-expanded', expanded);
+
+            // Toggle the class to flip the chevron icon
+            $chevronIcon.toggleClass('flipped');
+        });
+
+        // Checkbox div design functionality
+        $('.custom-checkbox').click(function () {
+            $(this).toggleClass('checked');
+        });
 
     }
 

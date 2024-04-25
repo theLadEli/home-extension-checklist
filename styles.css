@@ -637,6 +637,25 @@ input[type="radio"]:hover~div {
 
 /* Holding Screen Animation */
 
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 1.2s;
+    /* Adjust the duration as needed */
+}
+
 #holding-screen-text {
     color: #909090;
     text-align: center;
@@ -648,22 +667,76 @@ input[type="radio"]:hover~div {
     letter-spacing: 0.22px;
 }
 
+/* Checklist */
 
-@keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
+.accordion-item {
+    border-radius: 12px;
+    background: #FFF;
 }
-  
-.fadeInUp {
-    animation-name: fadeInUp;
-    animation-duration: 1.2s; /* Adjust the duration as needed */
+
+.accordion-header {
+    cursor: pointer;
+    display: flex;
+    
+    padding: 15px 25px;
+    justify-content: space-between;
+    align-items: center;
+    /* Typography */
+    color: #000;
+    font-family: Aeonik;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.22px;
+}
+
+.accordion-content {
+    padding: 10px 35px 25px 35px;
+    display: none;
+    color: rgba(0, 0, 0, 0.70);
+    font-family: Aeonik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.18px;
+}
+
+.custom-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #a4a9b4;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-checkbox.checked {
+    border-color: #3399fd;
+    background-color: #3399fd;
+}
+
+.custom-checkbox.checked::after {
+    content: "\2713";
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 26px;
+}
+
+.accordion-header .group {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add this CSS to rotate the chevron icon when the 'flipped' class is present */
+.accordion-header img.flipped {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease; /* Add a transition for smooth rotation */
 }
 
 /* --------------------- */
