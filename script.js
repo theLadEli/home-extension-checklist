@@ -12,6 +12,9 @@ var userDetails = {
     timeline: ""
 }
 var activeQuestion = 1;
+var progressBarWidth = $(".progress-bar").width();
+var originalProgress = progressBarWidth/10;
+var progress = originalProgress;
 
 function startForm(event) {
     event.preventDefault();
@@ -195,12 +198,16 @@ function nextQuestion() {
     $(`#step-${activeQuestion}`).removeClass("active");
     activeQuestion++;
     $(`#step-${activeQuestion}`).addClass("active");
+    progress = progress + originalProgress
+    $(`.pb_progress`).width(progress)
 }
 
 function previousQuestion() {
     $(`#step-${activeQuestion}`).removeClass("active");
     activeQuestion--;
     $(`#step-${activeQuestion}`).addClass("active");
+    progress = progress - originalProgress
+    $(`.pb_progress`).width(progress)
 }
 
 // Load relevant tasks
@@ -223,6 +230,13 @@ $(document).ready(function() {
         // Custom name introduction
         console.log("Project details page loaded")
         $("#project-details-custom-name-intro").text(`👋 Hi ${localStorage.getItem("userName")}! What type of project do you have in mind?`)
+
+        // Event listener for custom input design when :checked
+        $('input[type="radio"]').change(function(){
+            $('label').removeClass('blue-border');
+            $(this).closest('label').addClass('blue-border');
+
+        });
     }
 
     else if (window.location.pathname === "/checklist.html") {
