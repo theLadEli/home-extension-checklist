@@ -231,12 +231,35 @@ $(document).ready(function() {
         console.log("Project details page loaded")
         $("#project-details-custom-name-intro").text(`👋 Hi ${localStorage.getItem("userName")}! What type of project do you have in mind?`)
 
-        // Event listener for custom input design when :checked
+        // Event listener to add a blue border when a radio is :checked
         $('input[type="radio"]').change(function(){
             $('label').removeClass('blue-border');
             $(this).closest('label').addClass('blue-border');
-
         });
+
+        // Add blue border when checkbox is :checked and add logic for 'None' option
+        $('input[type="checkbox"]').change(function(){
+            // Check if the checkbox with value "none" is checked
+            if ($(this).val() === 'none' && $(this).is(':checked')) {
+                // Uncheck all other checkboxes and remove blue-border class from their labels
+                $('input[type="checkbox"]').not(this).prop('checked', false);
+                $('label').removeClass('blue-border');
+                $(this).closest('label').addClass('blue-border');
+            } else {
+                // Check if the checkbox is checked
+                if ($(this).is(':checked')) {
+                    // Uncheck the "None" checkbox if anything other than "None" is checked
+                    $('input[value="none"]').prop('checked', false);
+                    $('label[for="none"]').removeClass('blue-border');
+                    $(this).closest('label').addClass('blue-border');
+                } else {
+                    // Remove blue-border class from the closest label
+                    $(this).closest('label').removeClass('blue-border');
+                }
+            }
+        });
+        
+        
     }
 
     else if (window.location.pathname === "/checklist.html") {

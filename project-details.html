@@ -22,7 +22,7 @@
     <form onsubmit="saveProjectDetails(event)" id="project-details-content">
 
         <!-- Q1: Project Type -->
-        <div id="step-1" class="step">
+        <div id="step-1" class="step active">
 
             <div class="step-text">
                 <h1 id="project-details-custom-name-intro">👋 Hi! What type of project do you have in mind?</h1>
@@ -146,7 +146,7 @@
                 
                 <label class="qc_item" for="pd_no">
                     <input type="radio" name="project_design" id="pd_no" value="no">
-                    <img src="assets/placeholder_image.png">
+                    <img src="assets/need-inspiration.jpg">
                     <div>
                         <b>No</b><p>I need help deciding this.</p>
                     </div>
@@ -154,7 +154,7 @@
                 
                 <label class="qc_item" for="pd_yes">
                     <input type="radio" name="project_design" id="pd_yes" value="yes">
-                    <img src="assets/placeholder_image.png">
+                    <img src="assets/idea-board.jpg">
                     <div>
                         <b>Yes</b><p>I know what I want.</p>
                     </div>
@@ -174,7 +174,7 @@
 
             <div class="step-text">
                 <h1>Are you planning on selecting the interior design elements and finishes yourself?</h1>
-                <p><b>Did you know:</b> lorem  ipsum dolor sit amet consectetur adipiscing elit ante scelerisque, pellentesque vitae congue tristique!</p>
+                <p><b>Did you know:</b> around 44% of DIY home improvement projects exceeded their initial budgets. This is often due to underestimating the expenses associated with materials, labour, and unforeseen complications.</p>
             </div>
 
             <div class="progress-bar">
@@ -185,17 +185,17 @@
                 
                 <label class="qc_item" for="iaf_no">
                     <input type="radio" name="interior_and_finishes" id="iaf_no" value="no">
-                    <img src="assets/placeholder_image.png">
+                    <img src="assets/no-interior-design.jpg">
                     <div>
-                        <b>No</b><p>I am not undertaking this or will be hiring a professional.</p>
+                        <b>No</b><p>I'm not undertaking this or will hire a professional.</p>
                     </div>
                 </label>
                 
                 <label class="qc_item" for="iaf_yes">
                     <input type="radio" name="interior_and_finishes" id="iaf_yes" value="yes">
-                    <img src="assets/placeholder_image.png">
+                    <img src="assets/undertaking-interior-design.jpg">
                     <div>
-                        <b>No</b><p>I am not undertaking this or will be hiring a professional.</p>
+                        <b>Yes</b><p>I’ll make design decisions and select finishes.</p>
                     </div>
                 </label>
                 
@@ -273,7 +273,7 @@
                 <label class="qr_item"  for="cam_unsure">
                     <input type="radio" name="construction_and_management" id="cam_unsure" value="unsure">
 
-                    <b>Unsure:</b> I'll decide this later.</label>
+                    <b>Unsure:</b> I'll decide this later.
                 </label>
 
             </fieldset>
@@ -286,7 +286,7 @@
         </div>
         
         <!-- Q7: Professional Help -->
-        <div id="step-7" class="step active">
+        <div id="step-7" class="step">
 
             <div class="step-text">
                 <h1>Which professionals have you hired or do you plan on hiring for your project?</h1>
@@ -297,35 +297,35 @@
                 <div class="pb_progress"></div>
             </div>
 
-            <fieldset class="question-grid">
+            <fieldset class="question-flex-grid">
                 
                 <label class="qg_item" for="architect">
                     <input type="checkbox" id="architect" name="professional_help" value="architect">
-                    <img src="assets/single-storey-side.svg">
+                    <img src="assets/architect.png">
                     Architect
                 </label>
 
                 <label class="qg_item" for="structural-engineer">
                     <input type="checkbox" id="structural-engineer" name="professional_help" value="structural-engineer">
-                    <img src="assets/single-storey-side.svg">
+                    <img src="assets/engineer.png">
                     Structural Engineer
                 </label>
                 
                 <label class="qg_item" for="builder">
                     <input type="checkbox" id="builder" name="professional_help" value="builder">
-                    <img src="assets/single-storey-side.svg">
+                    <img src="assets/builder.png">
                     Builder
                 </label>
 
                 <label class="qg_item" for="interior-designer">
                     <input type="checkbox" id="interior-designer" name="professional_help" value="interior-designer">
-                    <img src="assets/single-storey-side.svg">
+                    <img src="assets/designer.png">
                     Interior Designer
                 </label>
 
                 <label class="qg_item" for="none">
                     <input type="checkbox" id="none" name="professional_help" value="none">
-                    <img src="assets/single-storey-side.svg">
+                    <img src="assets/none.png">
                     None
                 </label>
 
@@ -350,17 +350,27 @@
                 <div class="pb_progress"></div>
             </div>
 
-            <fieldset>
-                <input type="radio" name="budget" id="b_yes-fixed" value="yes-fixed">
-                <label for="b_yes-fixed"><b>Yes:</b> I have a fixed budget</label><br>
-                
-                
-                <input type="radio" name="budget" id="b_yes-flexible" value="yes-flexible">
-                <label for="b_yes-flexible"><b>No:</b> but it’s flexible</label><br>
+            <fieldset class="question-row">
+                                
+                <label class="qr_item"  for="b_yes-fixed">
+                    <input type="radio" name="budget" id="b_yes-fixed" value="yes-fixed">
 
-                <input type="radio" name="budget" id="b_no" value="no">
-                <label for="b_no"><b>Unsure:</b> I need help setting it</label>
-            </fieldset>            
+                    <b>Yes:</b> I have a fixed budget
+                </label>
+
+                <label class="qr_item"  for="b_yes-flexible">
+                    <input type="radio" name="budget" id="b_yes-flexible" value="yes-flexible">
+
+                    <b>No:</b> but it’s flexible
+                </label>
+                                    
+                <label class="qr_item"  for="b_no">
+                    <input type="radio" name="budget" id="b_no" value="no">
+
+                    <b>Unsure:</b> I need help setting it
+                </label>
+
+            </fieldset>
         
             <div class="form-nav-buttons">
                 <a class="secondary-btn" onclick="previousQuestion()">Back</a>
@@ -380,13 +390,20 @@
                 <div class="pb_progress"></div>
             </div>
 
-            <fieldset>
-                <input type="radio" name="timeline" id="t_yes" value="yes">
-                <label for="t_yes"><b>Yes,</b> I have a date in mind</label><br>
-                
-                
-                <input type="radio" name="timeline" id="t_no" value="no">
-                <label for="t_no"><b>No,</b> I would like help managing my timeline</label><br>
+            <fieldset class="question-row">
+                                
+                <label class="qr_item"  for="t_yes">
+                    <input type="radio" name="timeline" id="t_yes" value="yes">
+
+                    <b>Yes,</b> I have a date in mind
+                </label>
+
+                <label class="qr_item"  for="t_no">
+                    <input type="radio" name="timeline" id="t_no" value="no">
+
+                    <b>No,</b> I would like help managing my timeline
+                </label>
+
             </fieldset>
 
             <div class="form-nav-buttons">

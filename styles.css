@@ -456,7 +456,8 @@ fieldset {
 }
 
 .qg_item input[type="radio"],
-.qc_item input[type="radio"], .qg_item input[type="checkbox"] {
+.qc_item input[type="radio"],
+.qg_item input[type="checkbox"] {
     /* Hide the radio or checkbox */
     display: none;
 }
@@ -560,10 +561,14 @@ input[type="radio"]:hover~.qg_title {
     border: 1px solid #E6E9F0;
     background: white;
     overflow: hidden;
+    cursor: pointer;
+    width: 300px;
 }
 
 .qc_item img {
     height: 175px;
+    width: 300px;
+    object-fit: cover;
 }
 
 .qc_item div {
@@ -579,6 +584,7 @@ input[type="radio"]:hover~.qg_title {
     font-style: normal;
     line-height: 28px;
     letter-spacing: 0.2px;
+    text-wrap: wrap;
 }
 
 .qc_item p {
@@ -592,13 +598,70 @@ input[type="radio"]:hover~.qg_title {
     text-align: left;
 }
 
-input[type="radio"]:checked~div, input[type="radio"]:hover~div{
+input[type="radio"]:checked~div,
+input[type="radio"]:hover~div {
     /* Set title blue on click */
     color: var(--button);
 }
 
+#step-7 .qg_item {
+    padding: 38px 14px;
+}
+
+.question-flex-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.question-flex-grid .qg_item {
+    width: 175px;
+    /* Typography */
+    color: #000;
+    text-align: center;
+    font-family: Aeonik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+}
+
 .blue-border {
     border: 2px solid var(--button);
+}
+
+/* Holding Screen Animation */
+
+#holding-screen-text {
+    color: #909090;
+    text-align: center;
+    font-family: Aeonik;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.22px;
+}
+
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+}
+  
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 1.2s; /* Adjust the duration as needed */
 }
 
 /* --------------------- */
