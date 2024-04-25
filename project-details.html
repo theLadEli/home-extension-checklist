@@ -79,7 +79,7 @@
             </fieldset>
 
             <div class="form-nav-buttons" style="justify-content: flex-end;">
-                <a onclick="nextQuestion()">Next</a>
+                <a onclick="nextQuestion(); saveProjectType()">Next</a>
             </div>
 
         </div>
@@ -134,7 +134,7 @@
         <div id="step-3" class="step">
 
             <div class="step-text">
-                <h1>Do you have an idea of what your [project type] should look like?</h1>
+                <h1 id="personlised-step-3">Do you have an idea of what your project should look like?</h1>
                 <p>This helps us tailor your checklist to features that align with your dream extension! We can guide you through the process of defining your project's style, functionality, and key features, even if you haven't settled on specifics yet.</p>
             </div>
 

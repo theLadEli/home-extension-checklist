@@ -13,8 +13,9 @@ var userDetails = {
 }
 var activeQuestion = 1;
 var progressBarWidth = $(".progress-bar").width();
-var originalProgress = progressBarWidth/10;
+var originalProgress = progressBarWidth / 10;
 var progress = originalProgress;
+var projectType;
 
 function startForm(event) {
     event.preventDefault();
@@ -23,7 +24,7 @@ function startForm(event) {
     location.href = "/project-details.html";
 }
 
-function saveProjectDetails(event){
+function saveProjectDetails(event) {
     event.preventDefault();
 
     // Set each objects value to form selection
@@ -36,7 +37,7 @@ function saveProjectDetails(event){
 
     var checkedValues = [];
 
-    checkedProfessionalHelp.forEach(function(checkbox) {
+    checkedProfessionalHelp.forEach(function (checkbox) {
         checkedValues.push(checkbox.value);
     });
 
@@ -47,7 +48,7 @@ function saveProjectDetails(event){
     localStorage.setItem('userDetails', JSON.stringify(userDetails));
 
     // Redirect user to the Checklist
-    location.href = "/checklist.html";
+    location.href = "/generating-checklist.html";
 }
 
 function convertCSVtoArray() {
@@ -56,12 +57,12 @@ function convertCSVtoArray() {
             header: true,
             download: true,
             dynamicTyping: true,
-            complete: function(results) {
+            complete: function (results) {
                 console.log("CSV parsed successfully.");
                 taskList = results.data;
                 resolve(); // Resolve the promise once parsing is complete
             },
-            error: function(error) {
+            error: function (error) {
                 reject(error); // Reject the promise if there's an error
             }
         });
@@ -71,8 +72,11 @@ function convertCSVtoArray() {
 function pushTaskToArray(...task_ids) {
     // Populate the taskList array
     convertCSVtoArray().then(() => {
-
         task_ids.forEach(task_id => {
+            // Check if the task_id already exists in userTaskList
+            if (userTaskList.some(task => task.ID === task_id)) {
+                console.log("Task with ID", task_id, "already exists in userTaskList.");
+            } else {
                 // Find the relevant object in the array
                 var relevantObject = taskList.find(obj => obj.ID === task_id);
                 if (relevantObject) {
@@ -81,57 +85,61 @@ function pushTaskToArray(...task_ids) {
                 } else {
                     console.error("Task not found with ID:", task_id);
                 }
-        })
-
+            }
+        });
     }).catch(error => {
         console.error("Error parsing CSV:", error);
     });
-
 }
 
 function getRelevantUserTasks() {
+
+
     // Update userDetails object with values from form using local storage
     userDetails = JSON.parse(localStorage.getItem("userDetails"))
     console.log(userDetails)
 
+    // Push default tasks
+    pushTaskToArray(4, 6, 19, 20, 23, 25, 31, 32, 33, 34, 36, 41, 30, 46, 47, 49, 50, 51, 52)
+
     // Planning Status
-    switch(userDetails.planning_status) {
+    switch (userDetails.planning_status) {
         case "no":
-            pushTaskToArray(1,13,16,17,21,18);
+            pushTaskToArray(1, 13, 16, 17, 21, 18);
             break;
         default:
             console.log(`Planning Status is not "no"`);
     }
 
     // Design
-    switch(userDetails.project_design) {
+    switch (userDetails.project_design) {
         case "no":
-            pushTaskToArray(2,7);
+            pushTaskToArray(2, 7);
             break;
         default:
             console.log(`Project Design is not "no"`);
     }
 
     // Interior & Finishes
-    switch(userDetails.interior_and_finishes) {
+    switch (userDetails.interior_and_finishes) {
         case "yes":
-            pushTaskToArray(8,9,10,37,38,39,40);
+            pushTaskToArray(8, 9, 10, 37, 38, 39, 40);
             break;
         default:
             console.log(`Interior and Finishes is not "yes"`);
     }
 
     // External Works
-    switch(userDetails.external_works){
+    switch (userDetails.external_works) {
         case "yes":
-            pushTaskToArray(42,43,44,45);
+            pushTaskToArray(42, 43, 44, 45);
             break;
         default:
             console.log(`External Works is not "yes"`);
     }
 
     // Construction and Management
-    switch(userDetails.construction_and_management){
+    switch (userDetails.construction_and_management) {
         case "no ":
         case "unsure":
             pushTaskToArray(15);
@@ -141,12 +149,12 @@ function getRelevantUserTasks() {
     }
 
     // Professional Help
-    switch(userDetails.professional_help){
+    switch (userDetails.professional_help) {
         case "architect":
         case "builder":
         case "structural-engineer":
         case "interior-designer":
-            pushTaskToArray(24,26,27,28,29,35,48);
+            pushTaskToArray(24, 26, 27, 28, 29, 35, 48);
         case "architect":
             pushTaskToArray(3.1);
             break;
@@ -158,21 +166,21 @@ function getRelevantUserTasks() {
     }
 
     // Budget
-    switch(userDetails.budget){
+    switch (userDetails.budget) {
         case "yes-flexible":
             pushTaskToArray(22);
             break;
         case "no":
-            pushTaskToArray(3,22)
+            pushTaskToArray(3, 22)
             break;
         default:
             console.log(`Budget is "yes fixed"`)
     }
 
     // Timeline
-    switch(userDetails.timeline){
+    switch (userDetails.timeline) {
         case "no":
-            pushTaskToArray(1.5)
+            pushTaskToArray(5)
             break;
         default:
             console.log(`Timeline is set to "Yes"`)
@@ -188,9 +196,23 @@ function animateAndStartFlow() {
     }, 'fast');
 
     setTimeout(() => {
-            window.location.href = "/about-you.html"
-        }, 300
-    )
+        window.location.href = "/about-you.html"
+    }, 300)
+}
+
+function saveProjectType() {
+    projectType = $(`input[name='project_type']:checked`).val()
+    // Format value (apply capitalisation and replace "-" with " ")
+
+    if (projectType) {
+        var projectType = projectType.replace(/-/g, ' ').replace(/(?:^|\s)\S/g, function (a) {
+            return a.toUpperCase();
+        });
+        $("#personlised-step-3").html(`Do you have an idea of what your <span style="color: #3399fd;">${projectType}</span> project should look like?`)
+    } else {
+        console.log("No project type selected.")
+    }
+
 }
 
 // Multi page form logic
@@ -211,7 +233,7 @@ function previousQuestion() {
 }
 
 // Load relevant tasks
-$(document).ready(function() {
+$(document).ready(function () {
 
     // Check if the current page path matches the specific page path
     if (window.location.pathname === "/") {
@@ -224,21 +246,19 @@ $(document).ready(function() {
             }
         });
 
-    }
-
-    else if (window.location.pathname === "/project-details.html") {
+    } else if (window.location.pathname === "/project-details.html") {
         // Custom name introduction
         console.log("Project details page loaded")
         $("#project-details-custom-name-intro").text(`👋 Hi ${localStorage.getItem("userName")}! What type of project do you have in mind?`)
 
         // Event listener to add a blue border when a radio is :checked
-        $('input[type="radio"]').change(function(){
+        $('input[type="radio"]').change(function () {
             $('label').removeClass('blue-border');
             $(this).closest('label').addClass('blue-border');
         });
 
         // Add blue border when checkbox is :checked and add logic for 'None' option
-        $('input[type="checkbox"]').change(function(){
+        $('input[type="checkbox"]').change(function () {
             // Check if the checkbox with value "none" is checked
             if ($(this).val() === 'none' && $(this).is(':checked')) {
                 // Uncheck all other checkboxes and remove blue-border class from their labels
@@ -258,20 +278,35 @@ $(document).ready(function() {
                 }
             }
         });
-        
-        
-    }
 
-    else if (window.location.pathname === "/checklist.html") {
-        // Code to execute when the specific page path loads
+
+    } else if (window.location.pathname === "/generating-checklist.html") {
         getRelevantUserTasks()
-        $("#local_storage_loaded").append(`
-            <h1>Hi ${localStorage.getItem("userName")}</h><br>
-            <p>${localStorage.getItem("userDetails")}</p>
-            <h1>User Task List:</h1>
-            <p>${localStorage.getItem("userTaskList")}
-        `)
-        console.log(`Checklist page loaded.`)
+        // Animate content out and redirect to Checklist after small delay
+        setTimeout(() => {
+            $("#body-center").animate({
+                height: 'toggle',
+                opacity: 'toggle'
+            }, 'fast');
+            setTimeout(() => {
+                window.location.href = "/checklist.html"
+            }), 1000
+        }, 3000)
+    } else if (window.location.pathname === "/checklist.html") {
+
+        $("#user-greeting").html(`Hello <span style="color: #3399fd">${localStorage.getItem("userName")}</span>!`)
+
+        // Retrieve userTaskList from localStorage
+        userTaskList = JSON.parse(localStorage.getItem("userTaskList"));
+
+        // Append userTaskList to #local_storage_loaded
+        userTaskList.forEach(task => {
+            $(`#local_storage_loaded`).append(`<p>Task: ${task.Name}, Priority: ${task.Description}</p>`);
+        });
+
+        // Update Sidebar Overview Stats
+        $("#os_total-tasks").text(userTaskList.length)
+
     }
 
 });
