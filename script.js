@@ -394,10 +394,29 @@ $(document).ready(function () {
             $chevronIcon.toggleClass('flipped');
         });
 
+        // Prevent accordion toggle when clicking on custom-checkbox
+        $('.custom-checkbox').click(function (event) {
+            event.stopPropagation(); // Stop event propagation to parent elements
+        });
+
         // Checkbox div design functionality
         $('.custom-checkbox').click(function () {
             $(this).toggleClass('checked');
         });
+
+
+        if ($("#cc_5").find(".accordion-item").length > 0) {
+            
+            console.log("Exterior does contain tasks.")
+
+        } else {
+            
+            console.log("Exterior does not contain tasks.")
+            $("#cc_5").hide();
+            $("a.ct_item[href='#cc_5']").hide();
+
+        }
+
 
         // Load sidebar stats
         sidebarStats()
