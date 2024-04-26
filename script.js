@@ -21,7 +21,7 @@ function startForm(event) {
     event.preventDefault();
     userName = $("input[name='name'").val();
     localStorage.setItem('userName', userName);
-    location.href = "/project-details.html";
+    location.href = "https://theladeli.github.io/home-extension-checklist/project-details.html";
 }
 
 function saveProjectDetails(event) {
@@ -48,7 +48,7 @@ function saveProjectDetails(event) {
     localStorage.setItem('userDetails', JSON.stringify(userDetails));
 
     // Redirect user to the Checklist
-    location.href = "/generating-checklist.html";
+    location.href = "https://theladeli.github.io/home-extension-checklist/generating-checklist.html";
 }
 
 function convertCSVtoArray() {
@@ -196,7 +196,7 @@ function animateAndStartFlow() {
     }, 'fast');
 
     setTimeout(() => {
-        window.location.href = "/about-you.html"
+        window.location.href = "https://theladeli.github.io/home-extension-checklist/about-you.html"
     }, 300)
 }
 
@@ -321,7 +321,7 @@ $(document).ready(function () {
                 opacity: 'toggle'
             }, 'fast');
             setTimeout(() => {
-                window.location.href = "/checklist.html"
+                window.location.href = "https://theladeli.github.io/home-extension-checklist/checklist.html"
             }), 1000
         }, 3000)
     } else if (window.location.pathname === "/checklist.html") {
