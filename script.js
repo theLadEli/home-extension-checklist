@@ -341,8 +341,10 @@ $(document).ready(function () {
                     <div class="accordion-header" data-expanded="false">
                         <div class="group">
                             <div class="custom-checkbox${isCheckedClass}" data-task_id="${task.ID}"></div>
-                            ${task.Name}
-                        </div>
+                            <p>
+                                ${task.Name}
+                            </p>
+                            </div>
                         <img src="assets/chevron_down.svg">
                     </div>
                     <div class="accordion-content">

@@ -704,8 +704,8 @@ input[type="radio"]:hover~div {
 }
 
 .custom-checkbox {
-    width: 24px;
-    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
     border: 2px solid #a4a9b4;
     border-radius: 5px;
     cursor: pointer;
@@ -752,6 +752,15 @@ input[type="radio"]:hover~div {
         line-height: 34px;
     }
 
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
     body {
         height: 90vh;
     }
@@ -765,5 +774,197 @@ input[type="radio"]:hover~div {
     #wc_ctas_keypress-indicator {
         display: none;
     }
+
+    /* About You Page */
+
+    #about-you-content {
+        width: unset;
+    }
+
+    #ayc_form {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    #ayc_form input {
+        width: 300px;
+    }
+
+    /* Project Details Page */
+
+    #body-center {
+        justify-content: unset
+    }
+
+    .step h1 {
+        font-size: 24px;
+    }
+
+    .step p {
+        font-size: 16px;
+    }
+
+    .question-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .qg_item {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        padding: 12px 20px;
+    }
+
+    .qg_item img {
+        height: unset;
+        width: 50px;
+        margin: 0;
+    }
+
+    .qg_title {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .qg_subtitle {
+        font-size: 14px;
+    }
+
+    .qr_item input {
+        margin-right: 5px
+    }
+
+    .qr_item {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 14px 16px;
+    }
+
+    .question-column {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .qc_item {
+        flex-direction: row;
+        width: 325px;
+        justify-content: flex-start;
+    }
+
+    .qc_item img {
+        height: unset;
+        width: 100px;
+        object-fit: cover;
+    }
+
+    label[for="pd_yes"] {
+        height: 100px;
+    }
+
+    .question-flex-grid {
+        flex-direction: column;
+    }
+
+    #step-7 .qg_item {
+        padding: 8px 14px;
+        width: 300px;
+    }
+    
+    #step-7 .qg_item img {
+        width: 40px;
+    }
+
+    /* Holding Screen */
+
+    .mobile-body-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center !important;
+        height: 100vh !important;
+        margin-top: -50px;
+    }
+
+    #holding-screen-text {
+        font-size: 14px;
+    }
+
+    /* Checklist Page */
+
+    #two-column-dashboard {
+        flex-direction: column;
+        gap: 20px;
+        height: unset;
+    }
+
+    #sidebar {
+        width: unset;
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .s_logo {
+        padding-bottom: 10px;
+    }
+
+    .s_logo img {
+        width: 150px;
+    }
+
+    #user-greeting {
+        margin-bottom: 15px;
+    }
+
+    #overview-stats {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    #overview-stats p {
+        font-size: 16px;
+    }
+
+    #main-checklist {
+        padding: 30px;
+        gap: 50px;
+    }
+
+    #main-checklist p {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+
+    .checklist-category {
+        gap: 15px;
+    }
+    
+    .accordion-header .group {
+        gap: 15px;
+        margin-right: 5px;
+    }
+
+    .accordion-header .group p {
+        font-size: 14px;
+        line-height: 18px;
+        color: #000;
+        font-family: Aeonik;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.22px;
+        width: fit-content !important;
+        margin-bottom: unset !important;
+    }
+
+    .accordion-content {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+
 
 }
