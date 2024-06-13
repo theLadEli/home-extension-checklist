@@ -29,6 +29,9 @@
     font-weight: 200;
 }
 
+html {
+    font-size: 8px;
+}
 
 * {
     margin: 0;
@@ -41,10 +44,10 @@ h1 {
     color: var(--text);
     text-align: center;
     font-family: Aeonik;
-    font-size: 30px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 4rem;
     letter-spacing: 0.3px;
 }
 
@@ -52,10 +55,10 @@ h2 {
     color: var(--Text, #272F3A);
     text-align: center;
     font-family: Aeonik;
-    font-size: 28px;
+    font-size: 2.8rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 22px;
+    line-height: 2.2rem;
     letter-spacing: 0.28px;
     text-align: left;
 }
@@ -64,10 +67,10 @@ h3 {
     color: #000;
     text-align: center;
     font-family: Aeonik;
-    font-size: 40px;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 4rem;
     letter-spacing: 0.4px;
     text-align: left;
 }
@@ -76,10 +79,10 @@ p {
     color: var(--text);
     text-align: center;
     font-family: "Nunito Sans";
-    font-size: 18px;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 2.6rem;
     letter-spacing: 0.18px;
 }
 
@@ -94,22 +97,22 @@ p {
 
 a {
     /* Style */
-    border-radius: 12px;
+    border-radius: 1.2rem;
     background-color: var(--button);
-    box-shadow: 0px 8px 16px 0px rgba(51, 153, 253, 0.32);
+    box-shadow: 0px 0.8rem 1.6rem 0px rgba(51, 153, 253, 0.32);
     cursor: pointer;
 
     /* Layout */
     width: fit-content;
-    padding: 18px 50px;
+    padding: 1.8rem 5rem;
 
     /* Typography */
     color: #fff;
     font-family: Aeonik;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 2rem;
     text-decoration: none;
     letter-spacing: 0.18px;
 }
@@ -117,31 +120,31 @@ a {
 .secondary-btn {
     background: unset;
     box-shadow: unset;
-    border: 3px solid var(--button);
+    border: 0.3rem solid var(--button);
     color: var(--button);
 }
 
 input[type="text"] {
     /* Layout */
     display: flex;
-    padding: 15px;
-    padding-left: 20px;
+    padding: 1.5rem;
+    padding-left: 2rem;
     text-align: left;
     align-items: center;
     width: -webkit-fill-available;
 
     /* Style */
-    border-radius: 12px;
-    border: 1px solid #EAEAEC;
+    border-radius: 1.2rem;
+    border: 0.1rem solid #EAEAEC;
     background: #FFF;
 
     /* Typography */
     color: var(--Inactive, #A4A9B4);
     font-family: Aeonik;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 2.4rem;
     letter-spacing: 0.16px;
 }
 
@@ -149,45 +152,45 @@ input[type="button"],
 input[type="submit"] {
     /* Layout */
     display: flex;
-    min-width: 158px;
-    padding: 18px 50px;
+    min-width: 15.8rem;
+    padding: 1.8rem 5rem;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 0.8rem;
 
     /* Style */
     cursor: pointer;
     border: none;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     background: var(--button);
-    box-shadow: 0px 0px 8px 0px rgba(51, 153, 253, 0.24);
+    box-shadow: 0px 0px 0.8rem 0px rgba(51, 153, 253, 0.24);
 
     /* Typography */
     color: var(--Text-White, #FFF);
     text-align: center;
     font-family: Aeonik;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 2rem;
     letter-spacing: 0.18px;
 }
 
 /* Welcome Page */
 
 #welcome-content {
-    max-width: 900px;
+    max-width: 90rem;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    padding: 50px;
+    gap: 5rem;
+    padding: 5rem;
 }
 
 #wc_text {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 3rem;
 }
 
 #wc_text h1 {
@@ -197,13 +200,13 @@ input[type="submit"] {
 #wc_text-paragraphs {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 0.9rem;
 }
 
 #wc_ctas {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1.5rem;
     align-items: center;
 }
 
@@ -211,57 +214,57 @@ input[type="submit"] {
     color: #000;
     text-align: center;
     font-family: "Nunito Sans";
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 2.2rem;
     letter-spacing: 0.14px;
     display: flex;
     align-items: center;
 }
 
 #wc_ctas_keypress-indicator img {
-    margin-left: 10px;
-    margin-right: 6px;
+    margin-left: 1rem;
+    margin-right: 0.6rem;
 }
 
 /* About You */
 
 #about-you-content {
     display: flex;
-    width: 510px;
-    padding: 30px;
-    padding-bottom: 20px;
+    width: 51rem;
+    padding: 3rem;
+    padding-bottom: 2rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 5rem;
 }
 
 #ayc_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 2rem;
 }
 
 #ayc_form {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 3rem;
     align-self: stretch;
 }
 
 /* Project Details */
 
 #project-details-content {
-    max-width: 665px;
+    max-width: 66.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    padding: 50px;
+    gap: 5rem;
+    padding: 5rem;
 }
 
 /* Checklist Results */
@@ -274,48 +277,48 @@ input[type="submit"] {
 }
 
 #sidebar {
-    width: 500px;
+    width: 50rem;
     background: white;
-    padding: 50px;
+    padding: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .s_logo {
-    padding-bottom: 20px;
-    border-bottom: solid 1px rgba(217, 217, 217, 0.30);
+    padding-bottom: 2rem;
+    border-bottom: solid 0.1rem rgba(217, 217, 217, 0.30);
 }
 
 .s_overview h2 {
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 #overview-stats {
-    border-radius: 12px;
+    border-radius: 1.2rem;
     background: var(--background);
     display: flex;
-    padding: 30px;
+    padding: 3rem;
     flex-direction: column;
-    gap: 15px;
+    gap: 1.5rem;
 }
 
 .os_row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.095);
+    padding-bottom: 1.2rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.095);
 }
 
 .os_row-title {
     color: #000;
     text-align: center;
     font-family: Aeonik;
-    font-size: 22px;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 2.2rem;
     letter-spacing: 0.22px;
 }
 
@@ -323,26 +326,26 @@ input[type="submit"] {
     color: var(--button);
     text-align: center;
     font-family: Aeonik;
-    font-size: 22px;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 2.2rem;
     letter-spacing: 0.22px;
 }
 
 .s_categories h2 {
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 #categories-table {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .ct_item {
     /* Layout */
-    padding: 0 0 10px 0;
+    padding: 0 0 1rem 0;
     display: flex;
     justify-content: space-between;
     width: -webkit-fill-available;
@@ -350,24 +353,24 @@ input[type="submit"] {
     /* Style */
     background: unset;
     box-shadow: unset;
-    border-bottom: 1px solid rgba(217, 217, 217, 0.40);
+    border-bottom: 0.1rem solid rgba(217, 217, 217, 0.40);
 
     /* Typography */
     color: #655E5E;
     text-align: center;
     font-family: Aeonik;
-    font-size: 20px;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 2.2rem;
     letter-spacing: 0.2px;
 }
 
 .s_sign-in {
-    border-radius: 12px;
+    border-radius: 1.2rem;
     background: rgba(0, 0, 0, 0.05);
     display: flex;
-    padding: 18px 20px;
+    padding: 1.8rem 2rem;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
@@ -378,35 +381,35 @@ input[type="submit"] {
     color: #000;
     text-align: center;
     font-family: "Open Sans";
-    font-size: 18px;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 22px;
+    line-height: 2.2rem;
     letter-spacing: 0.18px;
 }
 
 #main-checklist {
     flex: 1;
-    padding: 100px 200px;
+    padding: 10rem 20rem;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 8rem;
 }
 
 .checklist-category {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 3rem;
 }
 
 .checklist-category p {
     color: #000;
     font-family: Aeonik;
-    font-size: 22px;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 40px;
+    line-height: 4rem;
     text-align: left;
     letter-spacing: 0.22px;
 }
@@ -422,7 +425,7 @@ input[type="submit"] {
 .step {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 5rem;
 }
 
 .step {
@@ -434,21 +437,21 @@ input[type="submit"] {
 }
 
 .step-text h1 {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .progress-bar {
-    height: 16px;
-    border-radius: 20px;
+    height: 1.6rem;
+    border-radius: 2rem;
     background: white;
 }
 
 .pb_progress {
-    height: 16px;
-    border-radius: 16px;
+    height: 1.6rem;
+    border-radius: 1.6rem;
     background: var(--button);
-    width: 66.5px;
-    box-shadow: 0px 0px 8px 0px rgba(51, 153, 253, 0.24);
+    width: 6.65rem;
+    box-shadow: 0px 0px 0.8rem 0px rgba(51, 153, 253, 0.24);
 }
 
 /* Field Layouts */
@@ -468,7 +471,7 @@ fieldset {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
+    gap: 2rem;
     text-align: center;
 }
 
@@ -478,29 +481,29 @@ fieldset {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 25px 15px;
+    gap: 0.6rem;
+    padding: 2.5rem 1.5rem;
 
     /* Style */
     background: white;
-    border-radius: 12px;
-    border: 1px solid var(--stroke);
+    border-radius: 1.2rem;
+    border: 0.1rem solid var(--stroke);
     cursor: pointer;
 }
 
 .qg_item img {
-    height: 60px;
-    margin-bottom: 9px;
+    height: 6rem;
+    margin-bottom: 0.9rem;
 }
 
 .qg_title {
     color: #000;
     text-align: center;
     font-family: Aeonik;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 2.4rem;
     letter-spacing: 0.16px;
 }
 
@@ -508,10 +511,10 @@ fieldset {
     color: var(--inactive);
     text-align: center;
     font-family: Aeonik;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 12px;
+    line-height: 1.2rem;
     letter-spacing: 0.14px;
 }
 
@@ -524,34 +527,34 @@ input[type="radio"]:hover~.qg_title {
 .question-row {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 2.2rem;
 }
 
 .qr_item {
     background: white;
-    border: 1px solid #E6E9F0;
-    border-radius: 12px;
-    padding: 18px 16px;
+    border: 0.1rem solid #E6E9F0;
+    border-radius: 1.2rem;
+    padding: 1.8rem 1.6rem;
     text-align: left;
     cursor: pointer;
     /* Typography */
     color: var(--text);
     font-family: Aeonik;
-    font-size: 20px;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 2.8rem;
     letter-spacing: 0.2px;
 }
 
 .qr_item input {
-    margin-right: 15px;
+    margin-right: 1.5rem;
 }
 
 .question-column {
     display: flex;
     flex-direction: row;
-    gap: 22px;
+    gap: 2.2rem;
     justify-content: center;
 }
 
@@ -559,32 +562,32 @@ input[type="radio"]:hover~.qg_title {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 12px;
-    border: 1px solid #E6E9F0;
+    border-radius: 1.2rem;
+    border: 0.1rem solid #E6E9F0;
     background: white;
     overflow: hidden;
     cursor: pointer;
-    width: 300px;
+    width: 30rem;
 }
 
 .qc_item img {
-    height: 175px;
-    width: 300px;
+    height: 17.5rem;
+    width: 30rem;
     object-fit: cover;
 }
 
 .qc_item div {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 18px 20px;
+    gap: 0.5rem;
+    padding: 1.8rem 2rem;
     align-items: flex-start;
     /* Typography */
     color: var(--text);
     font-family: Aeonik;
-    font-size: 20px;
+    font-size: 2rem;
     font-style: normal;
-    line-height: 28px;
+    line-height: 2.8rem;
     letter-spacing: 0.2px;
     text-wrap: wrap;
 }
@@ -592,10 +595,10 @@ input[type="radio"]:hover~.qg_title {
 .qc_item p {
     color: var(--Inactive, #A4A9B4);
     font-family: Aeonik;
-    font-size: 20px;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 2.8rem;
     letter-spacing: 0.2px;
     text-align: left;
 }
@@ -607,7 +610,7 @@ input[type="radio"]:hover~div {
 }
 
 #step-7 .qg_item {
-    padding: 38px 14px;
+    padding: 3.8rem 1.4rem;
 }
 
 .question-flex-grid {
@@ -615,24 +618,24 @@ input[type="radio"]:hover~div {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 2rem;
 }
 
 .question-flex-grid .qg_item {
-    width: 175px;
+    width: 17.5rem;
     /* Typography */
     color: #000;
     text-align: center;
     font-family: Aeonik;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 2.4rem;
     letter-spacing: 0.16px;
 }
 
 .blue-border {
-    border: 2px solid var(--button);
+    border: 0.2rem solid var(--button);
 }
 
 /* Holding Screen Animation */
@@ -660,17 +663,17 @@ input[type="radio"]:hover~div {
     color: #909090;
     text-align: center;
     font-family: Aeonik;
-    font-size: 22px;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 40px;
+    line-height: 4rem;
     letter-spacing: 0.22px;
 }
 
 /* Checklist */
 
 .accordion-item {
-    border-radius: 12px;
+    border-radius: 1.2rem;
     background: #FFF;
 }
 
@@ -678,36 +681,36 @@ input[type="radio"]:hover~div {
     cursor: pointer;
     display: flex;
     
-    padding: 15px 25px;
+    padding: 1.5rem 2.5rem;
     justify-content: space-between;
     align-items: center;
     /* Typography */
     color: #000;
     font-family: Aeonik;
-    font-size: 22px;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 3rem;
     letter-spacing: 0.22px;
 }
 
 .accordion-content {
-    padding: 10px 35px 25px 35px;
+    padding: 1rem 3.5rem 2.5rem 3.5rem;
     display: none;
     color: rgba(0, 0, 0, 0.70);
     font-family: Aeonik;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 3rem;
     letter-spacing: 0.18px;
 }
 
 .custom-checkbox {
-    min-width: 24px;
-    min-height: 24px;
-    border: 2px solid #a4a9b4;
-    border-radius: 5px;
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    border: 0.2rem solid #a4a9b4;
+    border-radius: 0.5rem;
     cursor: pointer;
 }
 
@@ -719,16 +722,16 @@ input[type="radio"]:hover~div {
 .custom-checkbox.checked::after {
     content: "\2713";
     display: block;
-    font-size: 18px;
+    font-size: 1.8rem;
     color: #fff;
     text-align: center;
-    line-height: 26px;
+    line-height: 2.6rem;
 }
 
 .accordion-header .group {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 3rem;
     align-items: center;
     justify-content: center;
 }
@@ -748,17 +751,17 @@ input[type="radio"]:hover~div {
     /* Global Styles */
 
     h1 {
-        font-size: 28px;
-        line-height: 34px;
+        font-size: 2.8rem;
+        line-height: 3.4rem;
     }
 
     h2 {
-        font-size: 22px;
+        font-size: 2.2rem;
     }
 
     h3 {
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 2.4rem;
+        line-height: 3rem;
     }
 
     body {
@@ -768,7 +771,7 @@ input[type="radio"]:hover~div {
     /* Welcome Page */
 
     #welcome-content {
-        padding: 10px 30px;
+        padding: 1rem 3rem;
     }
 
     #wc_ctas_keypress-indicator {
@@ -788,7 +791,7 @@ input[type="radio"]:hover~div {
     }
 
     #ayc_form input {
-        width: 300px;
+        width: 30rem;
     }
 
     /* Project Details Page */
@@ -798,11 +801,11 @@ input[type="radio"]:hover~div {
     }
 
     .step h1 {
-        font-size: 24px;
+        font-size: 2.4rem;
     }
 
     .step p {
-        font-size: 16px;
+        font-size: 1.6rem;
     }
 
     .question-grid {
@@ -814,33 +817,33 @@ input[type="radio"]:hover~div {
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        gap: 20px;
-        padding: 12px 20px;
+        gap: 2rem;
+        padding: 1.2rem 2rem;
     }
 
     .qg_item img {
         height: unset;
-        width: 50px;
+        width: 5rem;
         margin: 0;
     }
 
     .qg_title {
-        font-size: 14px;
-        line-height: 14px;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
     }
 
     .qg_subtitle {
-        font-size: 14px;
+        font-size: 1.4rem;
     }
 
     .qr_item input {
-        margin-right: 5px
+        margin-right: 0.5rem;
     }
 
     .qr_item {
-        font-size: 14px;
-        line-height: 20px;
-        padding: 14px 16px;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        padding: 1.4rem 1.6rem;
     }
 
     .question-column {
@@ -850,18 +853,18 @@ input[type="radio"]:hover~div {
 
     .qc_item {
         flex-direction: row;
-        width: 325px;
+        width: 32.5rem,;
         justify-content: flex-start;
     }
 
     .qc_item img {
         height: unset;
-        width: 100px;
+        width: 10rem;
         object-fit: cover;
     }
 
     label[for="pd_yes"] {
-        height: 100px;
+        height: 10rem;
     }
 
     .question-flex-grid {
@@ -869,12 +872,12 @@ input[type="radio"]:hover~div {
     }
 
     #step-7 .qg_item {
-        padding: 8px 14px;
-        width: 300px;
+        padding: 0.8rem 1.4rem;
+        width: 30rem;
     }
     
     #step-7 .qg_item img {
-        width: 40px;
+        width: 4rem;
     }
 
     /* Holding Screen */
@@ -885,72 +888,72 @@ input[type="radio"]:hover~div {
         align-items: center;
         justify-content: center !important;
         height: 100vh !important;
-        margin-top: -50px;
+        margin-top: -5rem;
     }
 
     #holding-screen-text {
-        font-size: 14px;
+        font-size: 1.4rem;
     }
 
     /* Checklist Page */
 
     #two-column-dashboard {
         flex-direction: column;
-        gap: 20px;
+        gap: 2re,;
         height: unset;
     }
 
     #sidebar {
         width: unset;
-        padding: 20px;
+        padding: 2rem;
         display: flex;
-        gap: 20px;
+        gap: 2rem;
     }
 
     .s_logo {
-        padding-bottom: 10px;
+        padding-bottom: 1rem;
     }
 
     .s_logo img {
-        width: 150px;
+        width: 15rem;
     }
 
     #user-greeting {
-        margin-bottom: 15px;
+        margin-bottom: 1.5rem;
     }
 
     #overview-stats {
-        padding: 15px;
-        gap: 10px;
+        padding: 1.5rem;
+        gap: 1rem;
     }
 
     #overview-stats p {
-        font-size: 16px;
+        font-size: 1.6rem;
     }
 
     #main-checklist {
-        padding: 30px;
-        gap: 50px;
+        padding: 3rem;
+        gap: 5rem;
     }
 
     #main-checklist p {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 10px;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        margin-bottom: 1rem;
     }
 
     .checklist-category {
-        gap: 15px;
+        gap: 1.5rem;
     }
     
     .accordion-header .group {
-        gap: 15px;
-        margin-right: 5px;
+        gap: 1.5rem;
+        margin-right: 0.5rem;
     }
 
     .accordion-header .group p {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
         color: #000;
         font-family: Aeonik;
         font-style: normal;
@@ -961,8 +964,8 @@ input[type="radio"]:hover~div {
     }
 
     .accordion-content {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
     }
 
 
